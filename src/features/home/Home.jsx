@@ -88,26 +88,26 @@ export const Home = () => {
 
           <div className="flex flex-col gap-3">
             <Link
-              to={"/transactionHistory"}
+              to="/transaction-history"
               className="text-[10px] flex items-center"
             >
               Transaction History
               <span><MdOutlineKeyboardArrowRight /></span>
             </Link>
-            <button
-              type="button"
+            <Link
+              to="/add-money"
               className="flex items-center justify-center gap-1 h-5 rounded-xl bg-white text-[10px] font-bold text-brand-primary"
             >
               <span className="text-[8px]"><FaPlus /></span> Add Money
-            </button>
+            </Link>
           </div>
         </section>
 
         {/* Quick Action Tab */}
         <section className="mt-4 rounded-xl bg-white py-2 px-3 shadow-sm ring-1 ring-border-soft">
           <div className="flex justify-between">
-            <button
-              type="button"
+            <Link
+              to="/transfer-bank"
               className="flex flex-col items-center gap-2 rounded-xl py-2 text-center"
             >
               <span className="flex h-9 w-12 items-center justify-center rounded-xl bg-surface-muted text-xl font-extrabold text-brand-primary">
@@ -116,10 +116,10 @@ export const Home = () => {
               <span className="text-[10px] font-medium leading-2.5">
                 To Bank
               </span>
-            </button>
+            </Link>
 
-            <button
-              type="button"
+            <Link
+              to="/transfer-assurepay"
               className="flex flex-col items-center gap-2 py-2 text-center"
             >
               <span className="flex h-9 w-12 items-center justify-center rounded-xl bg-surface-muted text-xl font-bold text-brand-primary">
@@ -128,10 +128,10 @@ export const Home = () => {
               <span className="text-[10px] font-medium leading-2.5">
                 To AssurePay
               </span>
-            </button>
+            </Link>
 
-            <button
-              type="button"
+            <Link
+              to="/protected/create"
               className="flex flex-col items-center gap-2 rounded-xl py-2 text-center"
             >
               <span className="flex h-9 w-12 items-center justify-center rounded-xl bg-surface-muted text-xl font-bold text-brand-primary">
@@ -140,10 +140,10 @@ export const Home = () => {
               <span className="text-[10px] font-medium leading-2.5">
                 Escrow
               </span>
-            </button>
+            </Link>
 
-            <button
-              type="button"
+            <Link
+              to="/services/savebox"
               className="flex flex-col items-center gap-2 rounded-xl py-2 text-center"
             >
               <span className="flex h-9 w-12 items-center justify-center rounded-xl bg-surface-muted text-xl font-bold text-brand-primary">
@@ -152,7 +152,7 @@ export const Home = () => {
               <span className="text-[10px] font-medium leading-2.5">
                 Savings
               </span>
-            </button>
+            </Link>
           </div>
         </section>
         
@@ -160,9 +160,9 @@ export const Home = () => {
         <section className="mt-3 rounded-xl bg-white p-3 shadow-sm ring-1 ring-border-soft">
           <div className="mb-3 flex items-center justify-between">
             <h2 className="text-[10px] font-semibold">Protected Payments</h2>
-            <button type="button" className="text-[9.5px] font-semibold text-brand-primary">
+            <Link to="/protected" className="text-[9.5px] font-semibold text-brand-primary">
               View All
-            </button>
+            </Link>
           </div>
 
           <div className="grid grid-cols-3 gap-3">
@@ -182,77 +182,75 @@ export const Home = () => {
             </div>
           </div>
 
-          <button className="mt-3 h-8 w-full rounded bg-surface-muted text-[11px] font-medium text-brand-primary">
+          <Link to="/protected/create" className="mt-3 flex h-8 w-full items-center justify-center rounded bg-surface-muted text-[11px] font-medium text-brand-primary">
             + Create Protected Payment
-          </button>
+          </Link>
         </section>
 
         <section className="mt-3 rounded-xl bg-white p-3 shadow-sm ring-1 ring-border-soft">
           <div className="grid grid-cols-4 gap-2">
-            <button type="button" className="rounded-xl py-2 text-center text-[10px] font-medium ring-1 ring-border-soft">
+            <Link to="/services/airtime" className="rounded-xl py-2 text-center text-[10px] font-medium ring-1 ring-border-soft">
               <span className="mx-auto mb-1 flex h-8 w-8 items-center justify-center rounded-xl bg-blue-50 text-base text-blue-600">
                 <FiSmartphone />
               </span>
               Airtime
-            </button>
+            </Link>
 
-            <button type="button" className="rounded-xl py-2 text-center text-[10px] font-medium ring-1 ring-border-soft">
+            <Link to="/services/data" className="rounded-xl py-2 text-center text-[10px] font-medium ring-1 ring-border-soft">
               <span className="mx-auto mb-1 flex h-8 w-8 items-center justify-center rounded-xl bg-green-50 text-base text-green-600">
                 <FiWifi />
               </span>
               Data
-            </button>
+            </Link>
 
-            <button type="button" className="rounded-xl py-2 text-center text-[10px] font-medium ring-1 ring-border-soft">
+            <Link to="/services/electricity" className="rounded-xl py-2 text-center text-[10px] font-medium ring-1 ring-border-soft">
               <span className="mx-auto mb-1 flex h-8 w-8 items-center justify-center rounded-xl bg-amber-50 text-base text-amber-500">
                 <FiZap />
               </span>
               Electricity
-            </button>
+            </Link>
 
-            <button type="button" className="rounded-xl py-2 text-center text-[10px] font-medium ring-1 ring-border-soft">
+            <Link to="/services/savebox" className="rounded-xl py-2 text-center text-[10px] font-medium ring-1 ring-border-soft">
               <span className="mx-auto mb-1 flex h-8 w-8 items-center justify-center rounded-xl bg-purple-50 text-base text-purple-600">
                 <FaPiggyBank />
               </span>
               SaveBox
-            </button>
+            </Link>
 
-            <button type="button" className="rounded-xl py-2 text-center text-[10px] font-medium ring-1 ring-border-soft">
+            <Link to="/services/invite-earn" className="rounded-xl py-2 text-center text-[10px] font-medium ring-1 ring-border-soft">
               <span className="mx-auto mb-1 flex h-8 w-8 items-center justify-center rounded-xl bg-orange-50 text-base text-orange-600">
                 <FiUserPlus />
               </span>
               Invite & Earn
-            </button>
+            </Link>
 
-            <button type="button" className="rounded-xl py-2 text-center text-[10px] font-medium ring-1 ring-border-soft">
+            <Link to="/services/loan" className="rounded-xl py-2 text-center text-[10px] font-medium ring-1 ring-border-soft">
               <span className="mx-auto mb-1 flex h-8 w-8 items-center justify-center rounded-xl bg-pink-50 text-base text-pink-600">
                 <PiHandCoins />
               </span>
               Loan
-            </button>
+            </Link>
 
-            <button 
-              type="button" 
-              className="rounded-xl py-2 text-center text-[10px] font-medium ring-1 ring-border-soft">
+            <Link to="/services/betting" className="rounded-xl py-2 text-center text-[10px] font-medium ring-1 ring-border-soft">
               <span className="mx-auto mb-1 flex h-8 w-8 items-center justify-center rounded-xl bg-blue-50 text-base text-blue-600">
                 <IoFootballOutline />
               </span>
               Betting
-            </button>
+            </Link>
 
-            <button type="button" className="rounded-xl py-2 text-center text-[10px] font-medium ring-1 ring-border-soft">
+            <Link to="/services/more" className="rounded-xl py-2 text-center text-[10px] font-medium ring-1 ring-border-soft">
               <span className="mx-auto mb-1 flex h-8 w-8 items-center justify-center rounded-xl bg-gray-100 text-base text-gray-600">
                 <FiGrid />
               </span>
               More
-            </button>
+            </Link>
           </div>
         </section>
         
         {/* Promotions Tab */}
-        <div className="mt-3 h-21.5 overflow-hidden">
+        <div className="mt-3 h-[86px] overflow-hidden">
           {promotionIndex === 0 && (
-            <section className="promotion-slide relative h-21.5 overflow-hidden rounded-xl bg-linear-to-r from-brand-primary to-brand-deep p-3 pb-5 text-white">
+            <Link to="/promotions/invite-friends" className="promotion-slide relative block h-[86px] overflow-hidden rounded-xl bg-linear-to-r from-brand-primary to-brand-deep p-3 pb-5 text-white">
               <div className="relative z-10 max-w-[62%]">
                 <p className="text-xs font-bold">Invite Friends</p>
                 <p className="mt-1 text-[10px] leading-4 text-white/80">
@@ -269,11 +267,11 @@ export const Home = () => {
                 <span className="h-1.5 w-1.5 rounded-full bg-white/40" />
                 <span className="h-1.5 w-1.5 rounded-full bg-white/40" />
               </div>
-            </section>
+            </Link>
           )}
 
           {promotionIndex === 1 && (
-            <section className="promotion-slide relative h-21.5 overflow-hidden rounded-xl bg-linear-to-r from-status-success to-green-700 p-3 pb-5 text-white">
+            <Link to="/promotions/cashback" className="promotion-slide relative block h-[86px] overflow-hidden rounded-xl bg-linear-to-r from-status-success to-green-700 p-3 pb-5 text-white">
               <div className="relative z-10 max-w-[62%]">
                 <p className="text-xs font-bold">Cashback on Bills</p>
                 <p className="mt-1 text-[10px] leading-4 text-white/80">
@@ -290,11 +288,11 @@ export const Home = () => {
                 <span className="h-1.5 w-1.5 rounded-full bg-white" />
                 <span className="h-1.5 w-1.5 rounded-full bg-white/40" />
               </div>
-            </section>
+            </Link>
           )}
 
           {promotionIndex === 2 && (
-            <section className="promotion-slide relative h-21.5 overflow-hidden rounded-xl bg-linear-to-r from-blue-600 to-brand-primary p-3 pb-5 text-white">
+            <Link to="/promotions/protected-trade" className="promotion-slide relative block h-[86px] overflow-hidden rounded-xl bg-linear-to-r from-blue-600 to-brand-primary p-3 pb-5 text-white">
               <div className="relative z-10 max-w-[62%]">
                 <p className="text-xs font-bold">Trade with Protection</p>
                 <p className="mt-1 text-[10px] leading-4 text-white/80">
@@ -311,7 +309,7 @@ export const Home = () => {
                 <span className="h-1.5 w-1.5 rounded-full bg-white/40" />
                 <span className="h-1.5 w-1.5 rounded-full bg-white" />
               </div>
-            </section>
+            </Link>
           )}
 
 
@@ -321,12 +319,12 @@ export const Home = () => {
         <section className="mt-3 rounded-2xl bg-white p-3 shadow-sm ring-1 ring-border-soft">
           <div className="mb-2 flex items-center justify-between">
             <h2 className="text-xs font-bold">Recent Activity</h2>
-            <button type="button" className="text-[10px] font-bold text-brand-primary">
+            <Link to="/activity" className="text-[10px] font-bold text-brand-primary">
               View All
-            </button>
+            </Link>
           </div>
 
-          <button type="button" className="flex w-full items-center gap-3 border-b border-border-soft py-2 text-left">
+          <Link to="/transaction-history" className="flex w-full items-center gap-3 border-b border-border-soft py-2 text-left">
             <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-green-50 text-green-600">
               <FiDownload />
             </span>
@@ -340,9 +338,9 @@ export const Home = () => {
               <span className="block text-[11px] font-bold">- &#8358;15,000</span>
               <span className="block text-[10px] text-text-muted">Today</span>
             </span>
-          </button>
+          </Link>
 
-          <button type="button" className="flex w-full items-center gap-3 border-b border-border-soft py-2 text-left">
+          <Link to="/protected/1" className="flex w-full items-center gap-3 border-b border-border-soft py-2 text-left">
             <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-blue-50 text-brand-primary">
               <FiShield />
             </span>
@@ -356,9 +354,9 @@ export const Home = () => {
               <span className="block text-[11px] font-bold">- &#8358;25,000</span>
               <span className="block text-[10px] text-text-muted">Today</span>
             </span>
-          </button>
+          </Link>
 
-          <button type="button" className="flex w-full items-center gap-3 py-2 text-left">
+          <Link to="/transaction-history" className="flex w-full items-center gap-3 py-2 text-left">
             <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-green-50 text-green-600">
               <FiDownload />
             </span>
@@ -372,7 +370,7 @@ export const Home = () => {
               <span className="block text-[11px] font-bold text-status-success">+ &#8358;10,000</span>
               <span className="block text-[10px] text-text-muted">Yesterday</span>
             </span>
-          </button>
+          </Link>
         </section>
       </div>
 
