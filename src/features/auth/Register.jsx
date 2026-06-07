@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
+import { FaHeadset } from "react-icons/fa";
+import { IoIosArrowRoundBack } from "react-icons/io";
 
 export const Register = () => {
   const [registerMethod, setRegisterMethod] = useState("phone")
@@ -27,43 +29,43 @@ export const Register = () => {
           <button
             type="button"
             onClick={() => navigate(-1)}
-            className="text-2xl leading-none text-text-main focus:outline-none"
+            className="text-xl leading-none text-text-main focus:outline-none"
             aria-label="Go back"
           >
-            &larr;
+            <IoIosArrowRoundBack />
           </button>
 
           <button
             type="button"
-            className="text-sm font-semibold text-brand-primary focus:outline-none"
+            className="text-[12px] font-semibold text-brand-primary focus:outline-none"
             aria-label="Get help"
           >
-            Help
+            <FaHeadset />
           </button>
         </header>
 
-        <section className="flex flex-1 flex-col pt-6">
+        <section className="flex flex-1 flex-col pt-4">
           <div className="mb-9 flex flex-col items-center text-center">
-            <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-primary shadow-lg shadow-blue-200">
-              <span className="text-3xl font-bold text-white">A</span>
+            <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-2xl bg-brand-primary shadow-lg shadow-blue-200">
+              <span className="text-xl font-bold text-white">A</span>
             </div>
 
-            <h1 className="text-3xl font-bold tracking-tight">AssurePay</h1>
-            <p className="mt-2 text-sm text-text-muted">
+            <h1 className="text-xl font-bold tracking-tight">AssurePay</h1>
+            <p className="text-[11px] text-text-muted">
               Start protecting payments with escrow.
             </p>
           </div>
 
-          <h2 className="mb-5 text-2xl font-bold">
+          {/* <h2 className="mb-5 text-xl font-bold">
             Create your account
-          </h2>
+          </h2> */}
 
           <form onSubmit={handleSubmit} className="flex flex-col flex-1">
             <div className="mb-5 grid grid-cols-2 rounded-2xl bg-surface-muted p-1">
               <button
                 type="button"
                 onClick={() => setRegisterMethod("phone")}
-                className={`h-11 rounded-xl text-sm font-bold ${
+                className={`h-9 rounded-xl text-[12px] font-bold ${
                   registerMethod === "phone"
                     ? "bg-white text-brand-primary shadow-sm"
                     : "text-text-muted"
@@ -75,7 +77,7 @@ export const Register = () => {
               <button
                 type="button"
                 onClick={() => setRegisterMethod("email")}
-                className={`h-11 rounded-xl text-sm font-bold ${
+                className={`h-9 rounded-xl text-[12px] font-bold ${
                   registerMethod === "email"
                     ? "bg-white text-brand-primary shadow-sm"
                     : "text-text-muted"
@@ -94,8 +96,8 @@ export const Register = () => {
                   Phone number
                 </label>
 
-                <div className="flex h-16 items-center rounded-2xl bg-surface-soft px-4 ring-1 ring-border-soft focus-within:ring-2 focus-within:ring-brand-primary">
-                  <span className="mr-3 border-r border-border-muted pr-3 text-base font-semibold">
+                <div className="flex h-12 items-center rounded-2xl bg-surface-soft px-4 ring-1 ring-border-soft focus-within:ring-2 focus-within:ring-brand-primary">
+                  <span className="mr-3 border-r border-border-muted pr-3 text-[12px] font-semibold">
                     +234
                   </span>
 
@@ -105,7 +107,7 @@ export const Register = () => {
                     value={phoneNumber}
                     onChange={(event) => setPhoneNumber(event.target.value)}
                     placeholder="Enter phone number"
-                    className="w-full bg-transparent text-base font-medium text-text-main outline-none placeholder:text-text-soft"
+                    className="w-full bg-transparent text-[12px] font-medium text-text-main outline-none placeholder:text-text-soft"
                   />
                 </div>
               </div>
@@ -118,20 +120,20 @@ export const Register = () => {
                   Email address
                 </label>
 
-                <div className="flex h-16 items-center rounded-2xl bg-surface-soft px-4 ring-1 ring-border-soft focus-within:ring-2 focus-within:ring-brand-primary">
+                <div className="flex h-12 items-center rounded-2xl bg-surface-soft px-4 ring-1 ring-border-soft focus-within:ring-2 focus-within:ring-brand-primary">
                   <input
                     id="email"
                     type="email"
                     value={email}
                     onChange={(event) => setEmail(event.target.value)}
                     placeholder="Enter email address"
-                    className="w-full bg-transparent text-base font-medium text-text-main outline-none placeholder:text-text-soft"
+                    className="w-full bg-transparent text-[12px] font-medium text-text-main outline-none placeholder:text-text-soft"
                   />
                 </div>
               </div>
             )}
 
-            <label className="mt-5 flex items-start gap-3 text-sm leading-5 text-text-muted">
+            <label className="mt-5 flex items-start gap-3 text-[11px] leading-5 text-text-muted">
               <input
                 type="checkbox"
                 checked={acceptedTerms}
@@ -148,18 +150,18 @@ export const Register = () => {
               <button
                 type="submit"
                 disabled={!canSubmit}
-                className="h-16 w-full rounded-full bg-linear-to-r from-brand-primary to-brand-deep text-base font-bold text-white shadow-lg shadow-blue-200 disabled:cursor-not-allowed disabled:opacity-50"
+                className="h-12 w-full rounded-full bg-linear-to-r from-brand-primary to-brand-deep text-[13px] font-bold text-white shadow-lg shadow-blue-200 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 Continue to verification
               </button>
 
-              <p className="mt-6 text-center text-sm text-text-muted">
+              <p className="mt-6 text-center text-[11px] text-text-muted">
                 Already have an AssurePay account?
               </p>
 
               <Link
                 to="/login"
-                className="mt-1 block text-center text-sm font-bold text-brand-primary"
+                className="block text-center text-[11px] font-bold text-brand-primary"
               >
                 Log in
               </Link>

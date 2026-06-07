@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
+import { IoIosArrowRoundBack } from "react-icons/io";
+import { FaHeadset } from "react-icons/fa";
 
 export const Login = () => {
   const [identifier, setIdentifier] = useState("")
@@ -20,34 +22,34 @@ export const Login = () => {
           <button
             type="button"
             onClick={() => navigate(-1)}
-            className="text-2xl leading-none text-text-main focus:outline-none"
+            className="text-xl leading-none text-text-main focus:outline-none"
             aria-label="Go back"
           >
-            &larr;
+            <IoIosArrowRoundBack />
           </button>
 
           <button
             type="button"
-            className="text-sm font-semibold text-brand-primary focus:outline-none"
+            className="text-[12px] font-semibold text-brand-primary focus:outline-none"
             aria-label="Go back"
           >
-          Help
+            <FaHeadset />
           </button>
         </header>
 
         <section className="flex flex-1 flex-col pt-4">
-          <div className="mb-12 flex flex-col items-center text-center">
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-primary shadow-lg shadow-blue-200">
-              <span className="text-2xl font-bold text-white">A</span>
+          <div className="mb-10 flex flex-col items-center text-center">
+            <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-2xl bg-brand-primary shadow-lg shadow-blue-200">
+              <span className="text-xl font-bold text-white">A</span>
             </div>
 
-            <h1 className="text-2xl font-bold tracking-tight">AssurePay</h1>
-            <p className="mt-2 text-[12px] text-text-muted">
+            <h1 className="text-xl font-bold tracking-tight">AssurePay</h1>
+            <p className="text-[11px] text-text-muted">
               Manage your wallet and protected payments.
             </p>
           </div>
 
-          <h2 className="mb-5 text-xl font-bold">Log in to your account</h2>
+          {/* <h2 className="mb-4 text-[13px] font-medium">Log in to your account</h2> */}
 
           {/* FORM */}
           <form onSubmit={handleSubmit} className="flex flex-1 flex-col">
@@ -77,7 +79,7 @@ export const Login = () => {
               )}
             </div>
 
-            <p className="mt-4 text-[12px] text-text-muted">
+            <p className="mt-4 text-[10px] text-text-muted">
               Can't access your phone or email?{" "}
               <button
                 type="button"
@@ -96,13 +98,13 @@ export const Login = () => {
                 Continue
               </button>
               
-              <p className="mt-6 text-center text-[12px] text-text-muted">
+              <p className="mt-6 text-center text-[11px] text-text-muted">
                 Don't have an AssurePay account?
               </p>
 
               <Link
                 to="/register"
-                className="mt-1 text-[13px] block text-center text-sm font-bold text-brand-primary"
+                className="text-[11px] block text-center text-sm font-bold text-brand-primary"
               >
                 Create an account
               </Link>
